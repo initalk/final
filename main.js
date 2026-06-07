@@ -456,6 +456,19 @@ let globalAssignments = []
 let globalNames = []
 let isLadderPlaying = false
 
+function updateDietLink() {
+  const dietLink = document.getElementById('diet-link')
+  if (!dietLink) return
+
+  const today = new Date()
+  const year = today.getFullYear()
+  const month = String(today.getMonth() + 1).padStart(2, '0')
+  const day = String(today.getDate()).padStart(2, '0')
+  const dateString = `${year}-${month}-${day}`
+
+  dietLink.href = `https://joongbu.ac.kr/diet/index.es?mid=a10406030000&p=C&d=${dateString}`
+}
+
 function showSection(sectionType) {
   const recommendSec = document.getElementById('recommend-section')
   const dutchSec = document.getElementById('dutch-section')
@@ -834,6 +847,8 @@ function showFinalReceipt() {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
+  updateDietLink()
+
   const wholeBtns = document.querySelectorAll('.cat-btn')
   const defaultBtn = Array.from(wholeBtns).find((b) => b.textContent === '전체')
   if (defaultBtn) defaultBtn.classList.add('active-cat')
