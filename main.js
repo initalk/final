@@ -557,7 +557,6 @@ function addNewMenu() {
     shop: shop,
     name: name,
     mainMenu: mainMenu,
-    img: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=500&auto=format&fit=crop',
     price: price,
     score_img: '',
     category: category,
